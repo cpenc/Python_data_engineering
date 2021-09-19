@@ -35,7 +35,7 @@ Requirements of this project are very clear. Except the following two points.
 * List post codes based on fastest response. Hint (Refer columns Request date and implementation Date)
 * Top Agents based on postcode and amount
 
-I call these two points ambiguous because if you see the [input dataset](https://github.com/cpenc/Python_data_engineering/blob/main/Transaction.csv), the records and response times can be figured out at an account ID level. So, one could list post codes based on fastest response using several logics such as:
+I call these two points ambiguous because if you see the [input dataset](https://github.com/cpenc/Python_data_engineering/blob/main/Transaction.csv), the response times can be figured out at an account ID level. So, one could list post codes based on fastest response using several logics such as:
 * Fastest *average* response time per post code
 * Fastest *median* response time per post code
 
@@ -53,3 +53,5 @@ So just to make things easy for myself and demonstrate similar skills only once,
 
 Please refer to this [High level design diagram](https://github.com/cpenc/Python_data_engineering/blob/main/Design%20Diagram.PNG), if you want to understand the breakdown of steps implemented in the solution.
 
+## **Extract files**:
+Out of the 30K records in the input file, some where filtered out where data was questionable. The rules used to filter out are in the [High level design diagram](https://github.com/cpenc/Python_data_engineering/blob/main/Design%20Diagram.PNG). The rest of the records are groups and extracted 1K per json file as mentioned under the decisions I made section above. I've uploaded 10 of the 31 output files to this repo. One of the samples is [here](https://github.com/cpenc/Python_data_engineering/blob/main/extract_30.json).
